@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  master:
+    image: "jenkins/jenkins:lts"
+    ports:
+    - "80:8080"
+    - "50001:5001"
+    environment:
+    - JENKINS_SLAVE_AGENT_PORT=50001
+    - JENKINS_USER==admin
+    - JENKINS_PASS=pEbaS~W5XBwN3%S+
+    - JENKINS_NUM_EXECUTORS=1
+    volumes:
+    - ./data:/var/jenkins_home
+    restart: always
